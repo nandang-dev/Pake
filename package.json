@@ -1,7 +1,7 @@
 {
   "name": "pake-cli",
-  "version": "3.15.2",
-  "description": "🤱🏻 Turn any webpage into a desktop app with one command. 🤱🏻 一键打包网页生成轻量桌面应用。",
+  "version": "3.15.3",
+  "description": "\ud83e\udd31\ud83c\udffb Turn any webpage into a desktop app with one command. \ud83e\udd31\ud83c\udffb \u4e00\u952e\u6253\u5305\u7f51\u9875\u751f\u6210\u8f7b\u91cf\u684c\u9762\u5e94\u7528\u3002",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -28,15 +28,15 @@
   "files": [
     "LICENSE-EXCEPTION",
     "llms.txt",
-    "dist",
+    "dist/cli.js",
     "src-tauri"
   ],
   "scripts": {
-    "start": "pnpm run dev",
-    "dev": "pnpm run tauri dev",
-    "build": "tauri build",
-    "build:debug": "tauri build --debug",
-    "build:mac": "tauri build --target universal-apple-darwin",
+    "start": "node init && pnpm run dev",
+    "dev": "node init && pnpm run tauri dev",
+    "build": "node init && tauri build",
+    "build:debug": "node init && tauri build --debug",
+    "build:mac": "node init && tauri build --target universal-apple-darwin",
     "analyze": "cd src-tauri && cargo bloat --release --crates",
     "tauri": "tauri",
     "cli": "cross-env NODE_ENV=development rollup -c -w",
